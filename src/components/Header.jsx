@@ -1,43 +1,90 @@
 import { Link } from "react-router-dom";
 import { BsArrowUpRightCircle } from "react-icons/bs";
+import { useRef } from "react";
+import {
+  useGsapLineForward,
+  useGsapLinkDownfall,
+  useGsapTextUpward,
+  useGsapBoxScaling,
+} from "../hooks/gsap";
 
 const Header = () => {
+  const link1 = useRef(null);
+  const link2 = useRef(null);
+  const link3 = useRef(null);
+  const link4 = useRef(null);
+
+  const line1 = useRef(null);
+  const line2 = useRef(null);
+  const line3 = useRef(null);
+  const line4 = useRef(null);
+  const line5 = useRef(null);
+
+  const text1 = useRef(null);
+  const text2 = useRef(null);
+  const text3 = useRef(null);
+  const text4 = useRef(null);
+  const text5 = useRef(null);
+  const text6 = useRef(null);
+
+  const box1 = useRef(null);
+  const box2 = useRef(null);
+  const box3 = useRef(null);
+
+  const linkArr = [link1, link2, link3, link4];
+  const lineArr = [line1, line2, line3, line4, line5];
+  const textArr = [text1, text2, text3, text4, text5, text6];
+  const boxArr = [box1, box2, box3];
+
+  useGsapLinkDownfall(linkArr);
+  useGsapLineForward(lineArr);
+  useGsapTextUpward(textArr);
+  useGsapBoxScaling(boxArr);
+
   return (
     <div className="header container">
       <div className="row">
-        <h2>Usuf</h2>
-        <h2>Ali</h2>
+        <h2 ref={text1}>Usuf</h2>
+        <h2 ref={text2}>Ali</h2>
       </div>
 
-      <hr />
+      <hr ref={line1} />
 
       <div className="row">
-        <span>Front-End Developer</span>
-        <a href="http://google.com" target="_blank" rel="noopener noreferrer">
+        <span ref={link1}>Front-End Developer</span>
+        <a
+          ref={link2}
+          href="http://google.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           View Resume
         </a>
         <a
+          ref={link3}
           href="mailto:shmusuf@gmail.com"
           target="_blank"
           rel="noopener noreferrer"
         >
           Send Email
         </a>
-        <Link to="/contact">Contact Me</Link>
+        <Link ref={link4} to="/contact">
+          Contact Me
+        </Link>
       </div>
 
-      <hr />
+      <hr ref={line2} />
 
       <div className="row">
-        <Link tp="/about" className="box about">
+        <Link to="/about" className="box about" ref={box1}>
           <span>About</span>
           <span>
             <BsArrowUpRightCircle />
           </span>
         </Link>
-        <h2>Aspiring</h2>
+        <h2 ref={text3}>Aspiring</h2>
 
-        <Link tp="/projects" className="box projects">
+        <Link to="/projects" className="box projects" ref={box2}>
           <span>Projects</span>
           <span>
             <BsArrowUpRightCircle />
@@ -45,28 +92,28 @@ const Header = () => {
         </Link>
       </div>
 
-      <hr />
+      <hr ref={line3} />
 
       <div className="row">
-        <h2>
+        <h2 ref={text4}>
           Front-E<span>n</span>d Dev<span>el</span>oper
         </h2>
       </div>
 
-      <hr />
+      <hr ref={line4} />
 
       <div className="row">
-        <h2>Based</h2>
-        <Link tp="/skills" className="box skills">
+        <h2 ref={text5}>Based</h2>
+        <Link to="/skills" className="box skills" ref={box3}>
           <span>Skills</span>
           <span>
             <BsArrowUpRightCircle />
           </span>
         </Link>
-        <h2>in Bangladesh</h2>
+        <h2 ref={text6}>in Bangladesh</h2>
       </div>
 
-      <hr />
+      <hr ref={line5} />
     </div>
   );
 };
