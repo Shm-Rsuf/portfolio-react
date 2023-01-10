@@ -5,12 +5,8 @@ const Header = () => {
   return (
     <div className="header container">
       <div className="row">
-        <h2>
-          S<span>h</span>m
-        </h2>
-        <h2>
-          U<span>su</span>f
-        </h2>
+        <h2>Usuf</h2>
+        <h2>Ali</h2>
       </div>
 
       <hr />
@@ -39,7 +35,7 @@ const Header = () => {
             <BsArrowUpRightCircle />
           </span>
         </Link>
-        <h2>Aspieing</h2>
+        <h2>Aspiring</h2>
 
         <Link tp="/projects" className="box projects">
           <span>Projects</span>
